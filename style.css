@@ -1,0 +1,37 @@
+h1,h2{
+    text-align: center;
+}
+
+#question{
+    background-color: aqua;
+    border-style: solid;
+    border-left: 10px;
+    border-right: 10px;
+    border-color: black;
+    margin: 5% 0%;
+}
+
+#question>p{
+    margin: 5%;
+    padding-top: 2.5%;
+    padding-bottom: 2.5%;
+    font-size: 2em;
+}
+
+button{
+    width: 80%;
+    margin: 3% 10%;
+}
+
+.col{
+    align-items: center;
+}
+
+.timer{
+    text-align: right;
+    margin-right: 10%;
+}
+
+#restart{
+    display: none;
+}
