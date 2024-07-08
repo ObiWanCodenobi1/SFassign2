@@ -16,7 +16,7 @@ function countdown(){
 
 let interval = setInterval(countdown,1000);
 
-api_url = "https://opentdb.com/api.php?amount=20";
+api_url = "https://opentdb.com/api.php?amount=20&type=multiple";
 async function getQuestions(){
     const response = await fetch(api_url); 
     const data = await response.json(); 
@@ -66,13 +66,14 @@ function answer(option){
 }
 
 function end(){
-    document.getElementById("question").innerHTML = "Congratulations on completing the quiz! Your hard work and dedication truly paid off. Great job!<br>";
-    document.getElementById("question").innerHTML += "<p id = 'score'> score: " + score +"</p>"
+    document.getElementById("question").innerHTML = "<p>Congratulations on completing the quiz! Your hard work and dedication truly paid off. Great job!</p>";
+    document.getElementById("question").innerHTML += "<p id = 'score'> score: " + score +"</p><p>"
     for(i = 0; i < numberOfQuestions; i++){
         document.getElementById("question").innerHTML += "Question: " + result[i].question + "<br>";
         document.getElementById("question").innerHTML += "Correct Answer: " + result[i].correct_answer + "<br>";
         document.getElementById("question").innerHTML += "Your Answer: " + user_answers[i] + "<br>";
     }
+    document.getElementById("question").innerHTML += "</div>"
     document.getElementById("restart").style.display = "block";
     document.getElementById("opt1").style.display = "none";
     document.getElementById("opt2").style.display = "none";
